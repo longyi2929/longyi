@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body onLoad="init();">
+<script>
+(function(chajian){
+	chajian.fangfa = (function(){
+		return function (dom1,dom2){
+			this._dom = dom1;
+			dom2.ff = { dom : this };
+			this.show = function(){
+				alert(this._dom);
+			}
+		}
+	})();
+/* 注销也可正常运行
+chajian.fangfa.prototype = { 
+	show1 : function(num2){
+	//alert(this.num + num2);
+		this.show();
+	},
+	show2 : function(){			
+		this.show1();
+	}
+}
+*/
+	var doc = document.getElementsByTagName("body")[0];
+	//new chajian.fangfa("111", doc).show2();
+	//doc.ff.dom.show();
+})(window.chajian || {});	
+
+
+var context;
+var x=300;
+var y=0;
+var i=0;
+var ddx,ddy,timer;
+var dx=(150*Math.cos(54*Math.PI/180))/100;
+ddx=dx;
+var dy=(300-150*Math.sin(54*Math.PI/180))/100;
+ddy=dy;
+function init(){
+	context= myCanvas.getContext('2d');
+	timer=setInterval(draw,10);
+}
+function star300(){
+	
+	dx=(150*Math.cos((-18-((i-1)/2)*72)*Math.PI/180))/100-ddx;
+	ddx=(150*Math.cos((-18-((i-1)/2)*72)*Math.PI/180))/100;
+
+	dy=(300-150*Math.sin((-18-((i-1)/2)*72)*Math.PI/180))/100-ddy;
+	ddy=(300-150*Math.sin((-18-((i-1)/2)*72)*Math.PI/180))/100;
+
+	i++;
+}
+
+function star150(){
+	
+	dx=(300*Math.cos((18-(i/2)*72)*Math.PI/180))/100-ddx;
+	ddx=(300*Math.cos((18-(i/2)*72)*Math.PI/180))/100;
+
+	dy=(300-300*Math.sin((18-(i/2)*72)*Math.PI/180))/100-ddy;
+	ddy=(300-300*Math.sin((18-(i/2)*72)*Math.PI/180))/100;
+
+	i++;
+}
+function draw(){
+	//context.clearRect(0,0, 300,300);
+	context.beginPath();
+	context.fillStyle="#0000ff";
+	// Draws a circle of radius 20 at the coordinates 100,100 on the canvas
+	context.arc(x,y,8,0,Math.PI*2,true);
+	context.closePath();
+	context.fill();
+	if((((x-300)*(x-300)+(y-300)*(y-300))>300*300)){
+		if(i==1){
+			star300();
+		}
+		
+		if(i==3){
+			star300();
+		}
+		if(i==5){
+			star300();
+		}
+
+		if(i==7){
+			star300();
+		}
+
+		if(i==9){
+			clearInterval(timer);
+		}
+
+	}
+	if((((x-300)*(x-300)+(y-300)*(y-300))<150*150)){
+		if(i==0){
+			star150();
+		}
+
+		if(i==2){
+			star150();
+		}
+
+		if(i==4){
+			star150();
+		}
+
+		if(i==6){
+			star150();
+		}
+
+		if(i==8){
+			star150();
+		}
+	}
+	x+=dx;
+	y+=dy;
+}
+</script>
+
+<canvas id="myCanvas" width="600" height="600" >
+</canvas>
+</body>
+
+</html>

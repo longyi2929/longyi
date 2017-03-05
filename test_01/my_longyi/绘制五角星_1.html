@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<canvas width="600" height="600" id="c_1"></canvas>
+<script type="text/javascript">
+	var ctx=c_1.getContext("2d");
+	
+	function a(){
+		ctx.beginPath();
+		ctx.moveTo(250,0);
+		ctx.lineTo(319,126);
+		ctx.stroke();
+		ctx.fill();
+	}
+	function b(){
+		ctx.beginPath();
+		ctx.moveTo(319,126);
+		ctx.lineTo(458,153);
+		ctx.stroke();
+		ctx.fill();
+	}
+	function c(){
+		ctx.beginPath();
+		ctx.moveTo(458,153);
+		ctx.lineTo(362,256);
+		ctx.stroke();
+		ctx.fill();
+	}
+	function d(){
+		ctx.beginPath();
+		ctx.moveTo(362,256);
+		ctx.lineTo(379,398);
+		ctx.stroke();
+		ctx.fill();
+	}
+	function e(){
+		ctx.beginPath();
+		ctx.moveTo(379,398);
+		ctx.lineTo(250,338);
+		ctx.stroke();
+		ctx.fill();
+	}
+	function f(){
+		ctx.beginPath();
+		ctx.moveTo(250,338);
+		ctx.lineTo(122,398);
+		ctx.stroke();
+		ctx.fill();
+	}
+
+	function g(){
+		ctx.beginPath();
+		ctx.moveTo(122,398);
+		ctx.lineTo(140,256);
+		ctx.stroke();
+		ctx.fill();
+	}
+	function h(){
+		ctx.beginPath();
+		ctx.moveTo(140,256);
+		ctx.lineTo(43,153);
+		ctx.stroke();
+		ctx.fill();
+	}
+	function i(){
+		ctx.beginPath();
+		ctx.moveTo(43,153);
+		ctx.lineTo(182,126);
+		ctx.stroke();
+		ctx.fill();
+	}
+	function j(){
+		ctx.beginPath();
+		ctx.moveTo(182,126);
+		ctx.lineTo(250,0);
+		ctx.stroke();
+		ctx.fill();
+	}
+	setInterval(a,100);
+	setInterval(b,200);
+	setInterval(c,300);
+	setInterval(d,400);
+	setInterval(e,500);
+	setInterval(f,600);
+	setInterval(g,700);
+	setInterval(h,800);
+	setInterval(i,900);
+	setInterval(j,1000);
+
+	//250,0 319,126 458,153 362,256 379,398 250,338 122,398 140,256 43,153 182,126 250,0
+</script>
+</body>
+</html>

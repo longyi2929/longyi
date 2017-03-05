@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>手机触屏滑动距离</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+</head>    
+<body>
+<img src="images/2.jpg" /><br/>
+<img src="images/2.jpg" /><br/>
+<img src="images/2.jpg" /><br/>
+<img src="images/2.jpg" /><br/>
+<img src="images/2.jpg" /><br/>
+<img src="images/2.jpg" /><br/>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+</script>
+<script type="text/javascript">
+var doc=$(document);
+$("img")
+     .on("touchstart",function(){
+         var x_2=Number(doc.scrollHeight);
+         var y_2=Number(doc.scrollWidth);
+         console.log(x_2);
+         console.log(y_2);
+         console.log("aaaa")
+     })
+     .on("touchend",function(){
+         var x_3=Number(doc.pageX);
+         var y_3=Number(doc.pageY);
+         console.log(x_3);
+         console.log(y_3);
+     });
+
+    
+</script>
+
+
+</body>
+</html>

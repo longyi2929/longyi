@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		span{
+			font-size:42px;
+			color:green;
+			font-weight:bold;
+		}
+		u,i,strong,b,a{
+			font-size:58px;
+			color:red;
+			font-weight:bold;
+		}
+    	i{
+     		 font-style:normal;
+    	}
+		div{
+			width:60%;
+			margin:10% auto;
+		}
+		a,u{
+			text-decoration:none;
+		}
+	</style>
+</head>
+<body>
+<div>
+  <h1>倒计时</h1>
+  <u>10</u><span>天</span>
+  <i>10</i><span>小时</span>
+  <b>10</b><span>分</span>
+  <strong>56</strong><span>秒</span>
+  <a href="#"></a>
+</div>
+<script src="jquery-2.2.4.js"></script>>
+<script type="text/javascript">
+var timer=setInterval(function(){
+  var now=new Date();
+  var date=now.getDate();
+  var hour=now.getHours();
+  var minutes=now.getMinutes();
+  var second=now.getSeconds();
+  var millisecond=now.getMilliseconds();
+  var afterDate=29-date;
+  var afterHour=23-hour;
+  var afterMinutes=60-minutes;
+  var afterSecond=60-second;
+  var aftermillisecond=1000-millisecond;
+  $("u").html(afterDate);
+  $("i").html(afterHour);
+  $("b").html(afterMinutes);
+  $("strong").html(afterSecond);
+})
+  var a=60;
+  var timer1=setInterval(function(){
+  	a--;
+  	if(a<=0){
+  		a=60;
+  	}
+  	$("a").html(a);
+  },16)
+</script>
+</body>
+</html>

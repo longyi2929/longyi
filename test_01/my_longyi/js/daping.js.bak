@@ -1,0 +1,128 @@
+/**
+ * Created by Administrator on 2016/8/26.
+ */
+//进度条1
+var canvas=document.getElementById('d1');
+var ctx1=canvas.getContext("2d");
+ctx1.lineWidth=5;
+ctx1.font='24px SiHei';
+var start=-90;
+var end=-90;
+var timer=setInterval(function(){
+    ctx1.clearRect(0,0,50,50);
+    end+=10;
+    ctx1.beginPath();
+    ctx1.arc(50,50,40,start*Math.PI/180,end*Math.PI/180);
+    if(end-start<120){
+        ctx1.strokeStyle='green';
+        ctx1.fillStyle='green';
+    }
+    else if(end-start<240){
+        ctx1.strokeStyle='orange';
+        ctx1.fillStyle='orange';
+    }else{
+        ctx1.strokeStyle='red';
+        ctx1.fillStyle='red';
+    }
+    ctx1.stroke();
+    //绘制文字
+    var perentage=Math.floor((end-start)/360*100)+'%';
+    var textWidth=ctx1.measureText(perentage).width;
+    ctx1.fillText(perentage,50-textWidth/2,50+2);
+
+
+    if(end>=270){
+        clearInterval(timer);
+    }
+},200)
+//进度条2
+var ctx2=d2.getContext('2d');
+ctx2.lineWidth=5;
+ctx2.font='24px SiHei';
+var start=-90;
+var end=-90;
+var timer=setInterval(function(){
+    ctx2.clearRect(0,0,50,50);
+    end+=10;
+    ctx2.beginPath();
+    ctx2.arc(50,50,40,start*Math.PI/180,end*Math.PI/180);
+    if(end-start<120){
+        ctx2.strokeStyle='green';
+        ctx2.fillStyle='green';
+    }
+    else if(end-start<240){
+        ctx2.strokeStyle='orange';
+        ctx2.fillStyle='orange';
+    }else{
+        ctx2.strokeStyle='red';
+        ctx2.fillStyle='red';
+    }
+    ctx2.stroke();
+    //绘制文字
+    var perentage=Math.floor((end-start)/360*100)+'%';
+    var textWidth=ctx.measureText(perentage).width;
+    ctx2.fillText(perentage,50-textWidth/2,50+2);
+
+
+    if(end>=270){
+        clearInterval(timer);
+    }
+},200)
+
+
+//轮播
+/*
+var i=0;
+var timer=null,timerL=null,timerR=null;
+function move(n){
+    if(n==undefined){n=1;}
+    if(n>0){
+        if(-i>=1280){
+            i=0;
+            $("ul").css({"transition":"","transform":"translateX(0px)"});
+        }
+    }
+    if(n<0){
+        if(i>=0){
+            i=-1280;
+            $("ul").css({"transition":"","transform":"translateX(-1280px)"});
+        }
+    }
+    setTimeout(function(){
+        $("ul").css({
+            "transform":"translateX("+(i-=320*n)+"px)",
+            "transition":"transform 0.5s"
+        });
+    },24);
+};
+function sliderMove(){
+    timer=setInterval(function(){
+        move(1);
+    },1000);
+}
+sliderMove(1);
+$("ul").mouseover(function(){
+    clearInterval(timer);
+    timer=null;
+}).mouseout(function(){
+    sliderMove();
+});
+$("#down").mouseover(function(){
+    clearInterval(timer);
+    timer=null;
+}).click(function(){
+    move(1);
+}).mouseout(function(){
+    sliderMove();
+});
+
+$("#up").mouseover(function(){
+    clearInterval(timer);
+    timer=null;
+}).click(function(){
+    move(-1);
+}).mouseout(function(){
+    sliderMove();
+});
+*/
+

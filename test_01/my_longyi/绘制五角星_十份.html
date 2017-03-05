@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<canvas width="600" height="600" id="c_1"></canvas>
+<script type="text/javascript">
+	// function x(c,a,r){
+	// 	return c/2+r*Math.cos(a*Math.PI/180);
+	// }
+	// function y(c,a,r){
+	// 	return c/2-r*Math.sin(a*Math.PI/180);
+	// }
+	//小圆a从54开始 以后每次加72
+
+	//大圆从18开始，以后每次加72
+
+
+
+	var i=1;
+	var timer;
+	var ctx=c_1.getContext("2d");
+	ctx.lineWidth=3;
+	ctx.strokeStyle="#f8265c";
+	ctx.fill();
+	function a(){
+		ctx.beginPath();
+		ctx.moveTo(250,0);
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(250+i*(319-250)/20,i*126/20);//原来一条直线画出来的，换成现在每次画原来的十分之一
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);setTimeout(b,200);}
+			i++;
+		},50);
+	}
+	function b(){
+		ctx.beginPath();
+		ctx.moveTo(319,126);
+
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(319+i*(458-319)/20,126+i*(153-126)/20);
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);setTimeout(c,200);}
+			i++;
+		},50);
+	}
+	function c(){
+		ctx.beginPath();
+		ctx.moveTo(458,153);
+
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(458+i*(362-458)/20,153+i*(256-153)/20);
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);setTimeout(d,200);}
+			i++;
+		},50);
+
+		//ctx.lineTo(362,256);
+		//ctx.stroke();
+		//ctx.fill();
+	}
+	function d(){
+		ctx.beginPath();
+		ctx.moveTo(362,256);
+
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(362+i*(379-362)/20,256+i*(398-256)/20);
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);setTimeout(e,200);}
+			i++;
+		},50);
+
+		//ctx.lineTo(379,398);
+		//ctx.stroke();
+		//ctx.fill();
+	}
+	function e(){
+		ctx.beginPath();
+		ctx.moveTo(379,398);
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(379+i*(250-379)/20,398+i*(338-398)/20);
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);setTimeout(f,200);}
+			i++;
+		},50);
+
+		//ctx.lineTo(250,338);
+		//ctx.stroke();
+		//ctx.fill();
+	}
+	function f(){
+		ctx.beginPath();
+		ctx.moveTo(250,338);
+
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(250+i*(122-250)/20,338+i*(398-338)/20);
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);setTimeout(g,200);}
+			i++;
+		},50);
+
+		//ctx.lineTo(122,398);
+		//ctx.stroke();
+		//ctx.fill();
+	}
+
+	function g(){
+		ctx.beginPath();
+		ctx.moveTo(122,398);
+
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(122+i*(140-122)/20,398+i*(256-398)/20);
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);setTimeout(h,200);}
+			i++;
+		},50);
+
+
+		//ctx.lineTo(140,256);
+		//ctx.stroke();
+		//ctx.fill();
+	}
+	function h(){
+		ctx.beginPath();
+		ctx.moveTo(140,256);
+
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(140+i*(43-140)/20,256+i*(153-256)/20);
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);setTimeout(k,200);}
+			i++;
+		},50);
+
+
+		//ctx.lineTo(43,153);
+		//ctx.stroke();
+		//ctx.fill();
+	}
+	function k(){
+		ctx.beginPath();
+		ctx.moveTo(43,153);
+
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(43+i*(182-43)/20,153+i*(126-153)/20);
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);setTimeout(j,200);}
+			i++;
+		},50);
+
+		//ctx.lineTo(182,126);
+		//ctx.stroke();
+		//ctx.fill();
+	}
+	function j(){
+		ctx.beginPath();
+		ctx.moveTo(182,126);
+
+		timer=setInterval(function(){
+			if(i==21){i=1;}
+			ctx.lineTo(182+i*(250-182)/20,126+i*(0-126)/20);
+			ctx.stroke();
+			ctx.fill();
+			if(i==20){clearInterval(timer);}
+			i++;
+		},50);
+
+		//ctx.lineTo(250,0);
+		//ctx.stroke();
+		//ctx.fill();
+	}
+	/*setTimeout(a,000);
+	setTimeout(b,600);
+	setTimeout(c,900);
+	setTimeout(d,1200);
+	setTimeout(e,1500);
+	setTimeout(f,1800);
+	setTimeout(g,2100);
+	setTimeout(h,2400);
+	setTimeout(i,2700);
+	setTimeout(j,3000);*/
+
+	a();
+
+	//250,0 319,126 458,153 362,256 379,398 250,338 122,398 140,256 43,153 182,126 250,0
+</script>
+</body>
+</html>

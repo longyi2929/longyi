@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+ </HEAD>
+
+ <BODY>
+  <span id="dd">10</span>
+<!--<script type="text/javascript">
+function run(){
+    var s = document.getElementById("dd");
+    if(s.innerHTML == 0){
+        window.location.href='www.baidu.com';
+        return false;
+    }
+    s.innerHTML = s.innerHTML * 1 - 1;
+}
+window.setInterval("run();", 1000);
+</script>
+ -->
+  <script type="text/javascript">
+     setInterval(function(){
+         var s=document.getElementById("dd");
+         if(s.innerHTML==0){
+             window.location.href="http://www.baidu.com";
+             return false;
+         }
+         s.innerHTML= s.innerHTML*1-1;
+     },1000)
+  </script>
+ </BODY>
+</HTML>

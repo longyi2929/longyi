@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var i = 0;
+	var a = function() {
+  		if(i >=5) {
+     		return;
+  		}
+  		//画第i个线条并设置计时器1秒
+  		i++;
+  		a();
+	}
+
+	var i = 0;
+	var a = function(callback) {
+  		if(i >=5) {
+     	return;
+  		}
+  		//画线条线条
+  		i++
+ 		callback();
+ 	}
+
+	 a(a)
+
+
+	var i = 0;
+  	function a(callback){
+      	if(i >=5) {
+          return;
+      	}
+      	i++;
+      	callback();
+  	}
+	a(function(){
+		var a=function(){
+			conosle.log("qqq");
+		} 	
+ 	});
+ 	a()
+
+
+</script>
+</body>
+</html>

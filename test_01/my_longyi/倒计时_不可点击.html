@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		input{
+			width:200px;
+			height:50px;
+			background-color:rgb(172,255,172);
+			color:#000;
+			font-size:18px;
+			display:block; 
+			margin:0 auto;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="点击发送验证码" onclick="sendCode(this)" />
+	<script type="text/javascript"> 
+		var clock = '';
+		var nums = 60; 
+		var btn; 
+		function sendCode(thisBtn) {  
+			btn = thisBtn; 
+			btn.disabled = true;  
+			btn.value = nums+'秒后可重新获取';
+		 	clock = setInterval(doLoop, 1000);  
+		} 
+		function doLoop() {
+		  	nums--; 
+		  	if(nums > 0){ 
+		   		btn.value = nums+'秒后可重新获取'; 
+		   	}else{  
+		   		clearInterval(clock); 
+		   		btn.disabled = false;  
+		   		btn.value = '点击发送验证码';  
+		   		nums = 10; 
+		 	}
+		}
+	</script>
+</body>
+</html>

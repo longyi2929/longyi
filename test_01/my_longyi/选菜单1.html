@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta charset="utf-8">
+	<style>
+		ul{
+			border:1px solid #DDD;
+			width:200px;
+			height:300px;
+			float:left;
+			margin:10px 10px;
+
+		}
+		li{
+			padding:10px 10px;
+		}
+		#menu>li>a{
+			text-decoration:none;
+			color:#666;
+		}
+	</style>
+ </head>
+
+ <body>
+	<ul id="menu">
+		<li><a href="#">红烧肉<b>$10.9</b></a></li>
+		<li><a href="#">清蒸鱼<b>$20.9</b></a></li>
+		<li><a href="#">辣椒茄子<b>$30.9</b></a></li>
+		<li><a href="#">香芹百合<b>$40.9</b></a></li>
+		<li><a href="#">海带排骨<b>$50.9</b></a></li>
+	</ul>
+	<ul id="my_order">
+	
+	</ul>
+	 <script src="jquery-2.2.4.js"></script>
+	 <script>
+		$('#menu li').on("click",function(even){
+			var e=even.preventDefault();
+			var b=$(this).text();
+			var $a=$("<li class='c'><a href='#''>"+b+"</a></li>");
+			$('#my_order').append($a);
+		});
+		$('#my_order').on("click",".c",function(){
+			console.log("1");
+			$(this).remove();
+		});
+	 </script>
+ </body>
+</html>
